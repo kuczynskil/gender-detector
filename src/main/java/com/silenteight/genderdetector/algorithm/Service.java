@@ -1,6 +1,6 @@
 package com.silenteight.genderdetector.algorithm;
 
 public interface Service {
-    boolean detectGenderByFirstTokenOfName();
-    boolean detectGenderByMajorityRule();
+    String detectGenderByFirstTokenOfName(String name);
+    String detectGenderByMajorityRule(String name);
 }
