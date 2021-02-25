@@ -9,7 +9,33 @@ class TokenReaderTest {
     private TokenReader reader = new TokenReader();
 
     @Test
-    void returns_true() {
+    void should_return_true() {
         assertTrue(reader.isInFemaleTokenList("maria"));
+        assertTrue(reader.isInFemaleTokenList("MAriA"));
+        assertTrue(reader.isInFemaleTokenList("MariA"));
+        assertTrue(reader.isInFemaleTokenList("Gabriela"));
+        assertTrue(reader.isInFemaleTokenList("gertruda"));
+
+        assertTrue(reader.isInMaleTokenList("Michał"));
+        assertTrue(reader.isInMaleTokenList("Adam"));
+        assertTrue(reader.isInMaleTokenList("adam"));
+        assertTrue(reader.isInMaleTokenList("wojciech"));
+        assertTrue(reader.isInMaleTokenList("łukasz"));
+    }
+
+    @Test
+    void should_return_false() {
+        assertFalse(reader.isInFemaleTokenList(""));
+        assertFalse(reader.isInFemaleTokenList("M4ria"));
+        assertFalse(reader.isInFemaleTokenList("m0nika"));
+        assertFalse(reader.isInFemaleTokenList("angelikaa"));
+        assertFalse(reader.isInFemaleTokenList("ange likaa"));
+        assertFalse(reader.isInFemaleTokenList("michał"));
+
+        assertFalse(reader.isInMaleTokenList(""));
+        assertFalse(reader.isInMaleTokenList("agnieszka"));
+        assertFalse(reader.isInMaleTokenList("Łókasz"));
+        assertFalse(reader.isInMaleTokenList("michau"));
+        assertFalse(reader.isInMaleTokenList("abcxyz123"));
     }
 }

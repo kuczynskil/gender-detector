@@ -1,34 +1,29 @@
 package com.silenteight.genderdetector.algorithm;
 
+import org.springframework.stereotype.Service;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+@Service
 public class TokenReader {
 
 
     protected boolean isInFemaleTokenList(String name) {
         name = name.toUpperCase();
-
-        try (BufferedReader femaleTokens = new BufferedReader(new FileReader("female_names.txt"))) {
-            String line = "";
-            while (null != (line = femaleTokens.readLine())) {
-                if (line.equals(name)) {
-                    return true;
-                }
-            }
-        } catch (IOException f) {
-            f.printStackTrace();
-        }
-        return false;
+        return isInTokenList("female_names.txt", name);
     }
 
     protected boolean isInMaleTokenList(String name) {
         name = name.toUpperCase();
+        return isInTokenList("male_names.txt", name);
+    }
 
-        try (BufferedReader maleTokens = new BufferedReader(new FileReader("male_names.txt"))) {
+    private boolean isInTokenList(String fileName, String name) {
+        try (BufferedReader tokens = new BufferedReader(new FileReader(fileName))) {
             String line = "";
-            while (null != (line = maleTokens.readLine())) {
+            while (null != (line = tokens.readLine())) {
                 if (line.equals(name)) {
                     return true;
                 }
@@ -38,5 +33,4 @@ public class TokenReader {
         }
         return false;
     }
-
 }
