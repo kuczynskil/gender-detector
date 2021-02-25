@@ -3,6 +3,7 @@ package com.silenteight.genderdetector.algorithm;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
