@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TokenReaderTest {
 
-    private TokenReader reader = new TokenReader();
+    private final TokenReader reader = new TokenReader();
 
     @Test
-    void should_return_true() {
+    void should_return_true_because_name_lists_contain_given_Strings() {
         assertTrue(reader.isInFemaleTokenList("maria"));
         assertTrue(reader.isInFemaleTokenList("MAriA"));
         assertTrue(reader.isInFemaleTokenList("MariA"));
@@ -24,7 +24,7 @@ class TokenReaderTest {
     }
 
     @Test
-    void should_return_false() {
+    void should_return_false_because_name_lists_does_not_contain_given_Strings() {
         assertFalse(reader.isInFemaleTokenList(""));
         assertFalse(reader.isInFemaleTokenList("M4ria"));
         assertFalse(reader.isInFemaleTokenList("m0nika"));
