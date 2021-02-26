@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TokenReaderTest {
+class TokenReaderV1Test {
 
-    private final TokenReader reader = new TokenReader();
+    private final TokenReader_v1 reader = new TokenReader_v1();
 
     @Test
     void should_return_true_because_name_lists_contain_given_Strings() {
