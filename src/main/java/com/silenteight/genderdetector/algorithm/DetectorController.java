@@ -2,6 +2,7 @@ package com.silenteight.genderdetector.algorithm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,8 +19,13 @@ public class DetectorController {
     }
 
     @GetMapping("")
-    public Object getGender(@RequestParam(defaultValue = "") String name,
-                                @RequestParam(defaultValue = "1") int algoVariant) throws JsonProcessingException {
+    public Object getGender(@ApiParam(value = "name or names separated by a whitespace")
+                            @RequestParam String name,
+                            @ApiParam(value = "variant of gender detecting algorithm:" +
+                                    "\n1 - detects gender by first word" +
+                                    "\n2 - gender is determined by majority rule (more male than female names -> MALE)",
+                                    defaultValue = "1")
+                            @RequestParam int algoVariant) throws JsonProcessingException {
         String gender;
         if (algoVariant == 1) {
             gender = detector.detectGenderByFirstTokenOfName(name);
