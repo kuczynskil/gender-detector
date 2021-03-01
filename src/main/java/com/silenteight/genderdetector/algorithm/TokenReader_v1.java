@@ -7,18 +7,20 @@ import java.io.*;
 @Service
 public class TokenReader_v1 implements TokenReader {
 
+    private static final String RESOURCE_PATH = "src/main/resources/com/silenteight/genderdetector/algorithm/";
+
     public boolean isInFemaleTokenList(String name) {
         name = name.toUpperCase();
-        return isInTokenList("female_names.txt", name);
+        return isInTokenList(RESOURCE_PATH + "female_names.txt", name);
     }
 
     public boolean isInMaleTokenList(String name) {
         name = name.toUpperCase();
-        return isInTokenList("male_names.txt", name);
+        return isInTokenList(RESOURCE_PATH + "male_names.txt", name);
     }
 
     public boolean isInTokenList(String fileName, String name) {
-        try (InputStream is = TokenReader_v1.class.getResourceAsStream(fileName);
+        try (InputStream is = new FileInputStream(fileName);
              BufferedReader tokens = new BufferedReader(new InputStreamReader(is))) {
             String line = "";
             while (null != (line = tokens.readLine())) {

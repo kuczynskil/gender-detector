@@ -41,7 +41,8 @@ public class DetectorController {
     @GetMapping("/tokens")
     public Object getAvailableTokens() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readTree(DetectorController.class.getResourceAsStream("tokens.json"));
+        File file = new File("src/main/resources/com/silenteight/genderdetector/algorithm/tokens.json");
+        return mapper.readTree(file);
     }
 
 }
