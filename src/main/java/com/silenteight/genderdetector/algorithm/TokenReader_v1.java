@@ -20,8 +20,7 @@ public class TokenReader_v1 implements TokenReader {
     }
 
     public boolean isInTokenList(String fileName, String name) {
-        try (InputStream is = new FileInputStream(fileName);
-             BufferedReader tokens = new BufferedReader(new InputStreamReader(is))) {
+        try (BufferedReader tokens = new BufferedReader(new FileReader(fileName))) {
             String line = "";
             while (null != (line = tokens.readLine())) {
                 if (line.equals(name)) {
