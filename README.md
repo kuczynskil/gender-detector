@@ -21,7 +21,7 @@ Gender detecting algorithm has been implemented in two variants:
 * All tokens are checked and majority rule is used.
 
 Application has two REST endpoints:
-* /gender - returns 'MALE', 'FEMALE' or 'INCONCLUSIVE' 
+* /gender - returns 'MALE', 'FEMALE' or 'INCONCLUSIVE'\
 (with two parameteres: 'name' as input String and 'algoVariant' as the variant of the algorithm (1 or 2))
 * /gender/tokens - returns available female and male tokens
 
