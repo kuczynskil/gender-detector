@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/gender")
 public class DetectorController {
@@ -20,12 +23,11 @@ public class DetectorController {
 
     @GetMapping("")
     public Object getGender(@ApiParam(value = "name or names separated by a whitespace")
-                            @RequestParam String name,
+                            @RequestParam(defaultValue = "") String name,
                             @ApiParam(value = "variant of gender detecting algorithm:" +
                                     "\n1 - detects gender by first word" +
-                                    "\n2 - gender is determined by majority rule (more male than female names -> MALE)",
-                                    defaultValue = "1")
-                            @RequestParam int algoVariant) throws JsonProcessingException {
+                                    "\n2 - gender is determined by majority rule (more male than female names -> MALE)")
+                            @RequestParam(defaultValue = "1") int algoVariant) throws JsonProcessingException {
         String gender;
         if (algoVariant == 1) {
             gender = detector.detectGenderByFirstTokenOfName(name);
@@ -34,6 +36,13 @@ public class DetectorController {
         }
         String json = "{\"gender\" : \"" + gender + "\"}";
         return new ObjectMapper().readValue(json, Object.class);
+    }
+
+    @GetMapping("/tokens")
+    public Object getAvailableTokens() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File("tokens.json");
+        return mapper.readTree(file);
     }
 
 }

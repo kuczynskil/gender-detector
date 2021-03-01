@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DetectorService_v1Test {
 
-    private final TokenReader reader = new TokenReader();
+    private final TokenReader_v1 reader = new TokenReader_v1();
     private final DetectorService_v1 detector = new DetectorService_v1(reader);
     private final String FEMALE = "FEMALE";
     private final String MALE = "MALE";

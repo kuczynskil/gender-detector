@@ -5,12 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class DetectorService_v1 implements DetectorService {
 
-    private final TokenReader reader;
+    private final TokenReader_v1 reader;
     private static final String FEMALE = "FEMALE";
     private static final String MALE = "MALE";
     private static final String INCONCLUSIVE = "INCONCLUSIVE";
 
-    public DetectorService_v1(TokenReader reader) {
+    public DetectorService_v1(TokenReader_v1 reader) {
         this.reader = reader;
     }
 
