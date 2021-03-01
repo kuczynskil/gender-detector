@@ -41,8 +41,7 @@ public class DetectorController {
     @GetMapping("/tokens")
     public Object getAvailableTokens() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        File file = new File("tokens.json");
-        return mapper.readTree(file);
+        return mapper.readTree(DetectorController.class.getResourceAsStream("tokens.json"));
     }
 
 }
