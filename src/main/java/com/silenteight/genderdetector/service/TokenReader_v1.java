@@ -1,4 +1,4 @@
-package com.silenteight.genderdetector.algorithm;
+package com.silenteight.genderdetector.service;
 
 import org.springframework.stereotype.Service;
 

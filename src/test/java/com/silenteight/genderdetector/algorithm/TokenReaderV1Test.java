@@ -1,5 +1,6 @@
 package com.silenteight.genderdetector.algorithm;
 
+import com.silenteight.genderdetector.service.TokenReader_v1;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

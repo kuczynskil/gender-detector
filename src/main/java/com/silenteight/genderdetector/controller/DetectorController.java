@@ -1,7 +1,8 @@
-package com.silenteight.genderdetector.algorithm;
+package com.silenteight.genderdetector.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.silenteight.genderdetector.service.DetectorService_v1;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

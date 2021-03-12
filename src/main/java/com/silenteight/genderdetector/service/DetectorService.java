@@ -1,4 +1,4 @@
-package com.silenteight.genderdetector.algorithm;
+package com.silenteight.genderdetector.service;
 
 public interface DetectorService {
     String detectGenderByFirstTokenOfName(String name);

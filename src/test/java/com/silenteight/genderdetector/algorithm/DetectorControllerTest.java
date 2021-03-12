@@ -1,6 +1,8 @@
 package com.silenteight.genderdetector.algorithm;
 
 import com.silenteight.genderdetector.GenderDetectorApplication;
+import com.silenteight.genderdetector.controller.DetectorController;
+import com.silenteight.genderdetector.service.DetectorService_v1;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
