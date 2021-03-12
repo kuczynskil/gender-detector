@@ -1,14 +1,14 @@
 package com.silenteight.genderdetector.algorithm;
 
 import com.silenteight.genderdetector.service.DetectorService_v1;
-import com.silenteight.genderdetector.service.TokenReader_v1;
+import com.silenteight.genderdetector.service.FileReader_v1;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DetectorService_v1Test {
 
-    private final TokenReader_v1 reader = new TokenReader_v1();
+    private final FileReader_v1 reader = new FileReader_v1();
     private final DetectorService_v1 detector = new DetectorService_v1(reader);
     private final String FEMALE = "FEMALE";
     private final String MALE = "MALE";

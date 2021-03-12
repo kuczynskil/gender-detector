@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 
 @Service
-public class TokenReader_v1 implements TokenReader {
+public class FileReader_v1 implements FileReader {
 
     private static final String RESOURCE_PATH = "src/main/resources/com/silenteight/genderdetector/algorithm/";
 
@@ -20,7 +20,7 @@ public class TokenReader_v1 implements TokenReader {
     }
 
     public boolean isInTokenList(String fileName, String name) {
-        try (BufferedReader tokens = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader tokens = new BufferedReader(new java.io.FileReader(fileName))) {
             String line = "";
             while (null != (line = tokens.readLine())) {
                 if (line.equals(name)) {

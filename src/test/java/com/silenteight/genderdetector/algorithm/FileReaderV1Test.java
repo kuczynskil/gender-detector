@@ -1,13 +1,13 @@
 package com.silenteight.genderdetector.algorithm;
 
-import com.silenteight.genderdetector.service.TokenReader_v1;
+import com.silenteight.genderdetector.service.FileReader_v1;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TokenReaderV1Test {
+class FileReaderV1Test {
 
-    private final TokenReader_v1 reader = new TokenReader_v1();
+    private final FileReader_v1 reader = new FileReader_v1();
 
     @Test
     void should_return_true_because_name_lists_contain_given_Strings() {
