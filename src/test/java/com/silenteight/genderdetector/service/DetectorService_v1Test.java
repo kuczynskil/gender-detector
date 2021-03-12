@@ -1,4 +1,4 @@
-package com.silenteight.genderdetector.algorithm;
+package com.silenteight.genderdetector.service;
 
 import com.silenteight.genderdetector.service.DetectorService_v1;
 import com.silenteight.genderdetector.service.FileReader_v1;

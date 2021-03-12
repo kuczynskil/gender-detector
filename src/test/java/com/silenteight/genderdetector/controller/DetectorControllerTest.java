@@ -1,4 +1,4 @@
-package com.silenteight.genderdetector.algorithm;
+package com.silenteight.genderdetector.controller;
 
 import com.silenteight.genderdetector.GenderDetectorApplication;
 import com.silenteight.genderdetector.controller.DetectorController;
