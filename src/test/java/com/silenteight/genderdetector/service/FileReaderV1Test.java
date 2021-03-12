@@ -1,9 +1,9 @@
 package com.silenteight.genderdetector.service;
 
-import com.silenteight.genderdetector.service.FileReader_v1;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FileReaderV1Test {
 
